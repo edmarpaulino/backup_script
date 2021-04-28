@@ -27,6 +27,7 @@ case ${1} in
 			else
 				echo 'Failed to move the file. Please try again later.'
 				exit 1
+			fi
 		else
 			echo "Failed to compress the file $sourceDirectory. Please, try again later."
 			exit 1
