@@ -4,7 +4,9 @@ This script backs up your machine after you run the command:
 ```bash
  ./backuphw.sh -l or --login 
  ```
-on your terminal emulator, if you need help, run the command:
+on your terminal emulator.
+
+If you need help, run the command:
  ```bash
  ./backuphw.sh -h or --help 
  ```
