@@ -13,14 +13,14 @@ backupName="/home/$USER/NEW.bk"
 destinyDirectory="/home/$USER/BACKUP"
 
 
-# Checking diretories
+# Checking NEW diretory
 [[ -d "$sourceDirectory" ]] || { echo "Failed to find $sourceDirectory."; exit 1; }
-[[ -d "$destinyDirectory" ]] || { mkdir "$destinyDirectory"; echo "The directory $destinyDirectory has been created."; }
 
 # Performing the backup
 case ${1} in
 	-b|--backup)
-		if tar -cvf "$backupName" "$sourceDirectory"; then
+	[[ -d "$destinyDirectory" ]] || { mkdir "$destinyDirectory"; echo "The directory $destinyDirectory has been created."; }
+	if tar -cvf "$backupName" "$sourceDirectory"; then
 			if mv "$backupName" "$destinyDirectory"; then
 				echo 'The file was successfully backed up.'
 				exit 0
